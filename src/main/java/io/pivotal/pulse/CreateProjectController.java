@@ -2,6 +2,7 @@ package io.pivotal.pulse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -12,20 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class CreateProjectController {
-    private SampleService sampleService;
+
+    private CreateProjectUseCase createProjectUseCase;
 
     @Autowired
-    public CreateProjectController(SampleService sampleService) {
-        this.sampleService = sampleService;
-    }
-
-    @Autowired
-    public CreateProjectController() {
-
+    public CreateProjectController(CreateProjectUseCase createProjectUseCase) {
+        this.createProjectUseCase = createProjectUseCase;
     }
 
     @RequestMapping("/project/new")
-    public void someIntentionRevealingMethodName() {
-
+    public String someIntentionRevealingMethodName(Model projectData) {
+        createProjectUseCase.createFrom("project");
+        return "project/new";
     }
 }
