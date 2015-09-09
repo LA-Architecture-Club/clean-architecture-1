@@ -5,10 +5,9 @@ import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class CreateProjectControllerUnitTest {
@@ -24,11 +23,10 @@ public class CreateProjectControllerUnitTest {
 
     @Test
     public void test_that_controller_causes_side_effect() throws Exception {
-        // todo: expect a created, not just ok
-        mockMvc.perform(get("/project/new"))
-                .andExpect(status().isOk())
+        mockMvc.perform(post("/project/new").param("name", "test_name"))
+                .andExpect(status().isCreated())
                 .andReturn();
-        verify(createProjectUseCase).createFrom(anyString());
+        verify(createProjectUseCase).createFrom("test_name");
     }
 
 }
