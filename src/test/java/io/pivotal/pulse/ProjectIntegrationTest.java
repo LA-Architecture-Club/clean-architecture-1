@@ -36,8 +36,8 @@ public class ProjectIntegrationTest {
     public void test_create_project() throws Exception {
         String expectedResponse = "<html><body>Project Created.</body></html>";
 
-        MvcResult mvcResult = mockMvc.perform(get("/project/new"))
-                .andExpect(status().isOk())
+        MvcResult mvcResult = mockMvc.perform(get("/project/new?name=blah"))
+                .andExpect(status().isCreated())
                 .andReturn();
 
         assertThat(mvcResult.getResponse().getContentAsString(), equalTo(expectedResponse));
