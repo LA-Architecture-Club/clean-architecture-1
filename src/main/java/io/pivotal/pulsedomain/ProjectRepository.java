@@ -1,4 +1,4 @@
-package io.pivotal.pulse;
+package io.pivotal.pulsedomain;
 
 public interface ProjectRepository {
 }
