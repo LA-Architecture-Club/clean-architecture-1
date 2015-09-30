@@ -1,6 +1,6 @@
 package io.pivotal.pulse;
 
-import io.pivotal.pulse.domain.CreateProjectUseCase;
+import io.pivotal.pulsedomain.CreateProjectUseCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;

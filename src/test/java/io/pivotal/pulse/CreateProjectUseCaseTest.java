@@ -1,8 +1,8 @@
 package io.pivotal.pulse;
 
-import io.pivotal.pulse.domain.CreateProjectUseCase;
-import io.pivotal.pulse.domain.ProjectEntity;
-import io.pivotal.pulse.domain.ProjectRepository;
+import io.pivotal.pulsedomain.CreateProjectUseCase;
+import io.pivotal.pulsedomain.ProjectEntity;
+import io.pivotal.pulsedomain.ProjectRepository;
 import org.junit.Test;
 
 /**

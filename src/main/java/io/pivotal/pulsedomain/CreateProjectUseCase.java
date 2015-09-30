@@ -1,4 +1,5 @@
-package io.pivotal.pulse.domain;
+package io.pivotal.pulsedomain;
+
 
 public class CreateProjectUseCase {
 

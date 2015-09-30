@@ -1,7 +1,7 @@
 package io.pivotal.pulse;
 
-import io.pivotal.pulse.domain.CreateProjectUseCase;
-import io.pivotal.pulse.domain.ProjectRepository;
+import io.pivotal.pulsedomain.CreateProjectUseCase;
+import io.pivotal.pulsedomain.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

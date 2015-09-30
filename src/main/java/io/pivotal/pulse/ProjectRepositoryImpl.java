@@ -1,6 +1,6 @@
 package io.pivotal.pulse;
 
-import io.pivotal.pulse.domain.ProjectRepository;
+import io.pivotal.pulsedomain.ProjectRepository;
 import org.springframework.stereotype.Component;
 
 @Component
