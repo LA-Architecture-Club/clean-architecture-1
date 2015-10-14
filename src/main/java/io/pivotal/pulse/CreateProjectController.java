@@ -26,8 +26,8 @@ public class CreateProjectController {
 
     @RequestMapping("/project/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public String someIntentionRevealingMethodName(@RequestParam String name) {
-        createProjectUseCase.createFrom(name);
+    public String someIntentionRevealingMethodName(@RequestParam String name, @RequestParam String code) {
+        createProjectUseCase.createFrom(name, code);
         return "project/new";
     }
 }

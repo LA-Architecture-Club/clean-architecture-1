@@ -35,6 +35,10 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile('com.google.guava:guava:18.0')
 
+    compile ('com.github.javafaker:javafaker:0.4') {
+        exclude group: 'org.slf4j', module: 'slf4j-simple'
+    }
+
     runtime("com.h2database:h2")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }

@@ -1,5 +1,6 @@
 package io.pivotal.pulse;
 
+import com.github.javafaker.Faker;
 import io.pivotal.pulsedomain.CreateProjectUseCase;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 public class CreateProjectControllerUnitTest {
     private MockMvc mockMvc;
+    private Faker faker;
 
     private CreateProjectUseCase createProjectUseCase;
 
@@ -20,14 +22,15 @@ public class CreateProjectControllerUnitTest {
     public void setup() {
         createProjectUseCase = mock(CreateProjectUseCase.class);
         this.mockMvc = MockMvcBuilders.standaloneSetup(new CreateProjectController(createProjectUseCase)).build();
+        faker = new Faker();
     }
 
     @Test
     public void test_that_controller_causes_side_effect() throws Exception {
-        mockMvc.perform(post("/project/new").param("name", "test_name"))
+        String code = faker.code().isbn10();
+        mockMvc.perform(post("/project/new").param("name", "test_name").param("code", code))
                 .andExpect(status().isCreated())
                 .andReturn();
-        verify(createProjectUseCase).createFrom("test_name");
+        verify(createProjectUseCase).createFrom("test_name", code);
     }
-
 }

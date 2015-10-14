@@ -6,7 +6,7 @@ public class CreateProjectUseCase {
     public CreateProjectUseCase(ProjectRepository projectRepository) {
     }
 
-    public ProjectEntity createFrom(String name) {
+    public ProjectEntity createFrom(String name, String code) {
         return null;
     }
 }
